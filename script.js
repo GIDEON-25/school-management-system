@@ -12,8 +12,59 @@ document.getElementById("error").innerText="Invalid Login"
 }
 
 }
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
+  import { getFirestore, collection, addDoc, getDocs, doc, updateDoc, deleteDoc } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-firestore.js";
 
+  const firebaseConfig = {
+    apiKey: "AIzaSyAXGwPuCLslxBdDtQE_mgkZteHtoWVIK4Q",
+    authDomain: "my-project2-48b45.firebaseapp.com",
+    projectId: "my-project2-48b45",
+    storageBucket: "my-project2-48b45.firebasestorage.app",
+    messagingSenderId: "723678492819",
+    appId: "1:723678492819:web:f35ffde0360a36dfcef566",
+    measurementId: "G-2D3FFLEKZL"
+  };
 
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+
+  // Initialize Firestore
+  const db = getFirestore(app);
+
+  // Example: Add a student
+  async function addStudent(name, adm, clas){
+    try {
+      const docRef = await addDoc(collection(db, "students"), {
+        name: name,
+        admission: adm,
+        class: clas
+      });
+      console.log("Student added with ID: ", docRef.id);
+    } catch (e) {
+      console.error("Error adding student: ", e);
+    }
+  }
+
+  // Example: Get all students
+  async function getStudents(){
+    const querySnapshot = await getDocs(collection(db, "students"));
+    querySnapshot.forEach((doc) => {
+      console.log(`${doc.id} => `, doc.data());
+    });
+  }
+async function submitStudent(){
+  const name = document.getElementById("studentName").value;
+  const adm = document.getElementById("admNo").value;
+  const clas = document.getElementById("class").value;
+
+  if(name && adm && clas){
+    await addStudent(name, adm, clas, phone);
+    alert("Student Registered successfully!");
+    displayStudents();
+  } else {
+    alert("Please fill all fields");
+  }
+}
 
 function addStudent(){
 
@@ -65,7 +116,9 @@ row.insertCell(3).innerHTML=student.phone
 })
 
 }
-
+window.onload = function(){
+  displayStudents();
+}
 
 
 function addTeacher(){
@@ -255,5 +308,6 @@ row.insertCell(0).innerHTML=record.name
 row.insertCell(1).innerHTML=record.status
 
 })
+
 
 }
