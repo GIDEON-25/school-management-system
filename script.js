@@ -4,14 +4,17 @@ let user=document.getElementById("username").value
 let pass=document.getElementById("password").value
 
 if(user=="admin" && pass=="1234admin")
+  else
 (user=="principal" && pass=="1234principal")
+  else
 (user=="dos" && pass=="1234dos")
+  else
 (user=="deputy principal" && pass=="1234dp"){
 window.location="dashboard.html"
 }
 
 else{
-document.getElementById("error").innerText="Invalid Login"
+document.getElementById("error").innerText="Wrong Password⚠️"
 }
 
 }
@@ -314,4 +317,5 @@ row.insertCell(1).innerHTML=record.status
 
 
 }
+
 
