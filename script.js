@@ -3,7 +3,10 @@ function login(){
 let user=document.getElementById("username").value
 let pass=document.getElementById("password").value
 
-if(user=="admin" && pass=="1234"){
+if(user=="admin" && pass=="1234admin")
+(user=="principal" && pass=="1234principal")
+(user=="dos" && pass=="1234dos")
+(user=="deputy principal" && pass=="1234dp"){
 window.location="dashboard.html"
 }
 
@@ -311,3 +314,4 @@ row.insertCell(1).innerHTML=record.status
 
 
 }
+
