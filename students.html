@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Students</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h2>Register Student</h2>
+<input type="text" id="searchStudent" placeholder="Search student">
+<button onclick="searchStudent()">Search</button>
+
+<input type="text" id="name" placeholder="Student Name">
+<input type="text" id="adm" placeholder="Admission Number">
+<input type="text" id="class" placeholder="Class">
+<input type="text" id="phone" placeholder="Parent Phone">
+
+<button onclick="addStudent()">Add Student</button>
+<button onclick="window.print()">Print Students List</button>
+
+<h3>Student List</h3>
+
+<table id="studentTable">
+<tr>
+<th>Name</th>
+<th>Adm No</th>
+<th>Class</th>
+<th>Parent Phone</th>
+</tr>
+</table>
+
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Fees</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h2>Fee Payment</h2>
+
+<input type="text" id="fname" placeholder="Student Name">
+<input type="number" id="totalFee" placeholder="Total Fee">
+<input type="number" id="amountPaid" placeholder="Amount Paid">
+
+
+<button onclick="payFee()">Record Payment</button>
+
+<button onclick="printAllFees()">Print All Fee Statements</button>
+
+<table id="feeTable">
+
+<tr>
+<th>Student</th>
+<th>Total Fee</th>
+<th>Fee Paid</th>
+<th>Balance</th>
+<th>Print</th>
+</tr>
+
+</table>
+
+<script src="script.js"></script>
+
+</body>
+</html>

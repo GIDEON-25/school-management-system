@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Attendance</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h2>Attendance</h2>
+
+<input type="text" id="studentName" placeholder="Student Name">
+
+<select id="status">
+<option>Present</option>
+<option>Absent</option>
+</select>
+
+<button onclick="markAttendance()">Record</button>
+<button onclick="window.print()">Print Attendance</button>
+
+<table id="attendanceTable">
+
+<tr>
+<th>Student</th>
+<th>Status</th>
+</tr>
+
+</table>
+
+<script src="script.js"></script>
+
+</body>
+</html>
