@@ -1,20 +1,26 @@
 function login(){
 
-let user=document.getElementById("username").value
-let pass=document.getElementById("password").value
+let user = document.getElementById("username").value
+let pass = document.getElementById("password").value
 
-if(user=="admin" && pass=="1234admin")
-  else
-(user=="principal" && pass=="1234principal")
-  else
-(user=="dos" && pass=="1234dos")
-  else
-(user=="deputy principal" && pass=="1234dp"){
-window.location="dashboard.html"
+if(user == "admin" && pass == "1234admin"){
+    window.location = "dashboard.html"
+}
+
+else if(user == "principal" && pass == "1234principal"){
+    window.location = "dashboard.html"
+}
+
+else if(user == "dos" && pass == "1234dos"){
+    window.location = "dashboard.html"
+}
+
+else if(user == "deputy principal" && pass == "1234dp"){
+    window.location = "dashboard.html"
 }
 
 else{
-document.getElementById("error").innerText="Wrong Password⚠️"
+    document.getElementById("error").innerText = "Invalid username or password ⚠️"
 }
 
 }
@@ -317,5 +323,6 @@ row.insertCell(1).innerHTML=record.status
 
 
 }
+
 
 
